@@ -42,21 +42,21 @@ def start(message):
 	
 	bot.send_message(message.chat.id,
 		f"Приветствую тебя, {message.from_user.first_name} {message.from_user.last_name}!!! Сыграем в крестики-нолики?!")
-	bot.send_message(message.chat.id, 'Для начала игры нажмите /game')
+	bot.send_message(message.chat.id, f'Для начала игры нажмите кнопку {chr(128071)}', reply_markup=key.start_game)
 
 
-@bot.message_handler(commands=["game"])
-def game(message):
+@bot.callback_query_handler(func=lambda call: True)
+def game(call):
 	global fld, player, count
 	
-	print(f'"game" is running. Request text: {message.text}')
+	print(f'"game" is running.')
 	
-	if message.text == '/game':
+	if call.data == 'game':
 		fld = list(range(1, 10))
 		count = 9
 		player = player_starter()
-		bot.send_message(message.chat.id, show_field(fld))
-		msg = bot.send_message(message.chat.id, f"Начинает игрок {player}")
+		bot.send_message(call.message.chat.id, show_field(fld))
+		msg = bot.send_message(call.message.chat.id, f"Начинает игрок {player}")
 		bot.register_next_step_handler(msg, game_handler)
 	else:
 		bot.send_message(message.chat.id, 'Я не понимаю тея...')
