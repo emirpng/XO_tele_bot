@@ -130,3 +130,5 @@ dmypy.json
 .pyre/
 /stdn.db
 /all_students.csv
+
+/.handler-saves/**
