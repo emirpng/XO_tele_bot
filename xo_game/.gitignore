@@ -102,9 +102,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
-env/
 venv/
 ENV/
 env.bak/
@@ -132,3 +130,4 @@ dmypy.json
 /all_students.csv
 
 /.handler-saves/**
+/.handler-saves/
