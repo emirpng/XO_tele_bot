@@ -1,1 +1,13 @@
-python-telegram-bot
+pyrogram==1.4.12 
+tgcrypto
+telethon
+python-dotenv
+pymongo==4.2.0
+dnspython==2.2.1
+cryptg
+requests
+heroku3
+aiofiles
+psutil 
+speedtest-cli
+motor
