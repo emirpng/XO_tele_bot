@@ -11,3 +11,4 @@ aiofiles
 psutil 
 speedtest-cli
 motor
+telebot
